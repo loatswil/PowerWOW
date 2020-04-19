@@ -1,4 +1,4 @@
-$Creds = Import-Csv .\creds.csv
+$Creds = Import-Csv ..\creds.csv
 $ClientSecret = $Creds.clientSecret
 $ClientID = $Creds.clientID
 
