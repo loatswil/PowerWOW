@@ -23,6 +23,6 @@ $URL = "https://us.api.blizzard.com/profile/wow/character/" + $realm + "/" + $ch
 
 $equip = Invoke-WebRequest -Uri $URL
 
-$equipxml = $equip | ConvertFrom-Json
+$equipment = $equip | ConvertFrom-Json
 
-$equipxml.equipped_items | ForEach-Object {Write-Host $_.quality.name, $_.slot.name, $_.name, $_.level.value}
+$equipment.equipped_items | ForEach-Object {Write-Host $_.quality.name, $_.slot.name, $_.name, $_.level.value}

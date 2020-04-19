@@ -19,8 +19,6 @@ $URL = "https://us.api.blizzard.com/profile/wow/character/" + $realm + "/" + $ch
 
 $rep = Invoke-WebRequest -Uri $URL
 
-$repxml = $rep | ConvertFrom-Json
+$reputations = $rep | ConvertFrom-Json
 
-$reputations = $repxml.reputations
-
-$reputations | ForEach-Object {Write-Host $_.faction.name, $_.standing.value  "/" $_.standing.max "-" $_.standing.name}
+$reputations.reputations | ForEach-Object {Write-Host $_.faction.name, $_.standing.value  "/" $_.standing.max "-" $_.standing.name}

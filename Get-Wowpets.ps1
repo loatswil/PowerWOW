@@ -23,6 +23,6 @@ $URL = "https://us.api.blizzard.com/profile/wow/character/" + $realm + "/" + $ch
 
 $pets = Invoke-WebRequest -Uri $URL
 
-$petsxml = $pets | ConvertFrom-Json
+$petsobject = $pets | ConvertFrom-Json
 
-$petsxml.pets | ForEach-Object {Write-Host $_.quality.type, $_.level, $_.species.name}
+$petsobject.pets | ForEach-Object {Write-Host $_.quality.type, $_.level, $_.species.name}
